@@ -1,0 +1,58 @@
+<h2>{{tituloAccion}} Cliente</h2>
+
+<div class="modal-body">
+    
+  <form [formGroup]="formularioCliente">
+  <mat-form-field>
+    <mat-label>Buscar</mat-label>
+    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onOptionSelected($event)">
+      <mat-option *ngFor="let persona of filteredOptions | async" [value]="persona">
+        {{ persona.nombreCompleto }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  
+  <div class="row g-3">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Membresía</mat-label>
+        <mat-select formControlName="idMembresia">
+          <mat-option *ngFor="let membresia of listaMembresias" [value]="membresia.idMembresia">
+            {{ membresia.nombre }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <label for="Edad">Edad</label>
+      <input type="text" id="Edad" class="form-control" formControlName="Edad" (input)="onInput($event)" maxlength="2">
+    </div>
+    <div class="col">
+      <label for="Peso">Peso en KG</label>
+      <input type="text" id="Peso" class="form-control material-date" formControlName="Peso">
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col">
+      <label for="Altura">Altura</label>
+      <input type="text" id="Altura" class="form-control material-date" formControlName="Altura">
+    </div>
+    <div class="col">
+      <label for="MasaMuscular">Masa Muscular</label>
+      <input type="text" id="MasaMuscular" class="form-control material-date" formControlName="MasaMuscular">
+    </div>
+  </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-danger" (click)="cerrarModal()">Volver</button>
+  <button type="button" class="btn btn-primary" [disabled]="formularioCliente.invalid" (click)="guardarEditar_Cliente()">
+      {{botonAccion}}
+  </button>
+</div>
+
+
+
+  

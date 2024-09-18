@@ -1,0 +1,101 @@
+<div class="container mt-4">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1>{{titulo}}</h1> 
+
+          <div class="d-flex">
+            <input type="text" class="form-control" (keyup)="aplicarFiltroTabla($event)" placeholder="Buscar"
+            *ngIf="admin">
+          </div> 
+        </div>
+      </div>
+    
+      <div class="card-body">
+        <div class="table-responsive">
+          <table mat-table [dataSource]="dataListaPago" class="table table-bordered">
+            <ng-container matColumnDef="descripcionPersona" *ngIf="admin">
+              <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>
+              <td mat-cell *matCellDef="let element"> {{element.descripcionPersona}} </td>
+            </ng-container>
+            <ng-container matColumnDef="descripcionDireccion">
+              <th mat-header-cell *matHeaderCellDef> Direccion </th>
+              <td mat-cell *matCellDef="let element"> {{element.descripcionDireccion}} </td>
+            </ng-container>
+            <ng-container matColumnDef="descripcionNit">
+                <th mat-header-cell *matHeaderCellDef> NIT </th>
+                <td mat-cell *matCellDef="let element"> {{element.descripcionNit}} </td>
+              </ng-container>
+            <ng-container matColumnDef="descripcionTipoPago">
+              <th mat-header-cell *matHeaderCellDef> Tipo de Pago </th>
+              <td mat-cell *matCellDef="let element"> {{element.descripcionTipoPago}}</td>
+            </ng-container>
+            <ng-container matColumnDef="fechaInicio">
+              <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+              <td mat-cell *matCellDef="let element"> 
+                <span [ngStyle]="{ color: !element.fechaInicio ? 'red' : 'inherit' }">
+                  {{ element.fechaInicio ? (element.fechaInicio | date: 'dd-MM-yyyy') : 'Pendiente' }}
+                </span>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="fechaFin">
+              <th mat-header-cell *matHeaderCellDef> Fecha Terminada </th>
+              <td mat-cell *matCellDef="let element"> 
+                <span [ngStyle]="{ color: !element.fechaFin ? 'red' : 'inherit' }">
+                  {{ element.fechaFin ? (element.fechaFin | date: 'dd-MM-yyyy') : 'Pendiente' }}
+                </span>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="mes">
+               <th mat-header-cell *matHeaderCellDef> Mes </th>
+               <td mat-cell *matCellDef="let element"> 
+                <span [ngStyle]="{ color: !element.mes ? 'red' : 'inherit' }">
+                  {{ element.mes || 'Pendiente' }}
+                </span>
+               </td>
+            </ng-container>
+            <ng-container matColumnDef="monto">
+               <th mat-header-cell *matHeaderCellDef> Monto </th>
+               <td mat-cell *matCellDef="let element"> {{element.monto | currency: 'GTQ': 'symbol' }} </td>
+            </ng-container>
+            <ng-container matColumnDef="fechaRegistro">
+              <th mat-header-cell *matHeaderCellDef> Fecha de Pago</th>
+              <td mat-cell *matCellDef="let element"> {{element.fechaRegistro | date: 'dd-MM-yyyy HH:mm'}} </td>
+            </ng-container>
+            <ng-container matColumnDef="acciones">
+              <th mat-header-cell *matHeaderCellDef> Acciones </th>
+              <td mat-cell *matCellDef="let element">
+              <button class="btn btn-warning btn-sm" (click)="editarPago(element)">
+                <i class="bi bi-pencil fs-10"></i>
+              </button>
+      
+              <a *ngIf="element.descripcionTipoPago === 'En Línea'" 
+              [href]="element.checkout" 
+              class="btn btn-info btn-sm" 
+              target="_blank" 
+              rel="noopener noreferrer">
+             <i class="bi bi-box-arrow-up-right"></i> Checkout
+           </a>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnasTabla"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnasTabla;"></tr>
+          </table>
+          <!-- Pagination controls -->
+
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <div>
+              Total en Máquinas: {{ getTotalCosto() | currency: 'GTQ': 'symbol' }}
+            </div>
+            <button class="btn btn-success" (click)="exportToExcel()">
+              <i class="bi bi-file-earmark-excel"></i> Exportar
+            </button> 
+            <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]"></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

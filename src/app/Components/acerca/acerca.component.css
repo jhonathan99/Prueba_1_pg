@@ -1,0 +1,102 @@
+.container {
+    background-color: rgb(1, 1, 1);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+  }
+  
+  .history-section {
+    text-align: justify;
+    padding: 40px 20px;
+  }
+
+  .italic-text {
+    font-style: italic;
+  }
+  
+  .justified-text {
+    text-align: justify;
+  }
+  
+  .history-section h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .history-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .locations-section {
+    padding: 40px 20px;
+  }
+  
+  .map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .map img {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+  
+  .location-info {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+  }
+  
+  .location-info h2 {
+    font-size: 24px;
+    color: #00BFFF;
+    margin-bottom: 10px;
+  }
+  
+  .location-info h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .location-info p {
+    margin: 5px 0;
+  }
+  /* Asegúrate de que el body y el html ocupen toda la pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Asegura que .container ocupe al menos el alto completo de la ventana */
+.container {
+  min-height: 100vh; /* 100% del alto de la ventana */
+  display: flex;
+  flex-direction: column; /* Para que los elementos se apilen verticalmente */
+}
+
+/* Asegura que las secciones también ocupen todo el espacio disponible */
+.history-section, .locations-section {
+  flex: 1; /* Cada sección tomará el espacio disponible */
+}
+
+/* Estilos adicionales para asegurar que la imagen ocupe el tamaño correcto */
+.img-fluid {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Opcional: Ajusta la altura del contenedor del mapa para asegurar que ocupe todo el espacio */
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

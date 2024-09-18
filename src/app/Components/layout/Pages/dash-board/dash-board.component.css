@@ -1,0 +1,41 @@
+/* Estilo para el título del dashboard */
+/* Estilo para el título del dashboard */
+.dashboard-title {
+  font-size: 1.5rem; /* Reduce el tamaño de la fuente a 1.5rem */
+  font-weight: 500; /* Grosor de fuente seminegrita (puedes ajustar esto) */
+  text-align: center; /* Centra el texto dentro de su contenedor */
+  color: #5c5959; /* Color del texto, ajusta según el diseño */
+  margin: 0; /* Elimina márgenes predeterminados, ajusta si es necesario */
+  padding: 0.5rem 0; /* Añade espaciado arriba y abajo, ajusta si es necesario */
+  }
+  
+  /* Estilo para el card principal */
+  .main-card {
+    margin: 20px 40px;
+  }
+  
+  /* Estilo para la grid list */
+  .grid-list {
+    margin-bottom: 15px; /* Espacio entre la grid list y el siguiente card */
+  }
+  
+  /* Estilo para los cards dentro de la grid list */
+  .card-info {
+    text-align: center; /* Centrar el texto dentro del card */
+    padding: 20px; /* Espacio interno en el card */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo para los cards */
+  }
+  
+  /* Estilo para el card que contiene el gráfico */
+  .chart-card {
+    margin-top: 15px;
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  /* Contenedor del gráfico */
+  .chart-container {
+    width: 100%;
+    height: 400px;
+  }
+  

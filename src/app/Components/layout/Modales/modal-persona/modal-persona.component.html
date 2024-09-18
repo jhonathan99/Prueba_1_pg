@@ -1,0 +1,70 @@
+<h2>{{tituloAccion}} Usuario</h2>
+
+<div class="modal-body">
+    
+    <form [formGroup]="formularioPersona">
+        <div class="form-group">
+            <label for="nombreCompleto">Nombre Completo</label>
+            <input type="text" id="nombreCompleto" class="form-control" formControlName="nombreCompleto">
+     
+
+        <div class="row g-3">
+            <div class="col">
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" class="form-control" formControlName="telefono"(input)="onInput($event)" maxlength="8">
+            </div>
+            <div class="col">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" class="form-control" formControlName="direccion">
+            </div>
+            <div class="col">
+                <label for="fechaNacimiento">Fecha Nacimiento</label>
+                <input type="date" id="fechaNacimiento"class="form-control" formControlName="fechaNacimiento">
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col">
+                <label for="dpi">DPI</label>
+                <input type="text" id="dpi" class="form-control" formControlName="dpi"(input)="onInput($event)" maxlength="13">
+            </div>
+            <div class="col">
+                <label for="nit">NIT</label>
+                <input type="text" id="nit" class="form-control" formControlName="nit" (input)="onInput($event)" maxlength="8">
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="idRol">Rol</label>
+                    <select id="idRol" class="form-select" formControlName="idRol">
+                        <option value="" disabled selected>Seleccione un rol</option>
+                        <option *ngFor="let item of listaRoles" [value]="item.idRol">{{item.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+          </div>
+
+        
+        <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" class="form-control" formControlName="correo">
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="esActivo">Estado</label>
+                <select id="esActivo" class="form-select" formControlName="esActivo">
+                    <option value="" disabled selected>Seleccione el Estado</option>
+                    <option value="1">Activo</option>
+                    <option value="0">No activo</option>
+                </select>
+            </div>
+        </div>
+     </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="cerrarModal()">Volver</button>
+    <button type="button" class="btn btn-primary" (click)="guardarEditar_Persona()">
+        {{botonAccion}}
+    </button>
+</div>
+

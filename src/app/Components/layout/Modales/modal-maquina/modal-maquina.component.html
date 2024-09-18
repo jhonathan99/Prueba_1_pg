@@ -1,0 +1,43 @@
+<h2>{{tituloAccion}} Máquina</h2>
+
+<div class="modal-body">
+    <form [formGroup]="formularioMaquina">
+        <mat-form-field>
+            <mat-label>Buscar Persona</mat-label>
+            <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onOptionSelected($event)">
+              <mat-option *ngFor="let persona of filteredOptions | async" [value]="persona">
+                {{ persona.nombreCompleto }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        <div class="form-group">
+            <label for="codMaquina">Código</label>
+            <input type="text" id="codMaquina" class="form-control" formControlName="codMaquina" (input)="onInput($event)" maxlength="5">
+        </div>
+          
+        <div class="form-group">
+            <label for="nombre">Nombre </label>
+            <input type="text" id="nombre" class="form-control" formControlName="nombre">
+        </div>
+        <div class="form-group">
+            <label for="costo">Costo</label>
+            <input type="text" id="costo" class="form-control" formControlName="costo">
+        </div>
+        <div class="form-group">
+            <label for="fechaAdquisicion">Fecha Adquisición</label>
+            <input type="date" id="fechaAdquisicion" class="form-control" formControlName="fechaAdquisicion">
+        </div>
+        <div class="form-group">
+            <label for="fechaSalida">Fecha Salida</label>
+            <input type="date" id="fechaSalida" class="form-control" formControlName="fechaSalida">
+        </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="cerrarModal()">Volver</button>
+    <button type="button" class="btn btn-primary" (click)="guardarEditar_Maquina()">
+        {{botonAccion}}
+    </button>
+</div>

@@ -1,0 +1,41 @@
+
+<div class="card card-custom">
+  <div class="card-body">
+    <h5 class="card-title card-title-custom">Pago en Efectivo</h5>
+    <form [formGroup]="formularioPago" (ngSubmit)="guardarEditar_Pago()">
+      <div class="form-group">
+        <label for="fechaInicio">Fecha Inicio</label>
+        <input type="date" id="fechaInicio" formControlName="fechaInicio" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="fechaFin">Fecha Fin</label>
+        <input type="date" id="fechaFin" formControlName="fechaFin" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="mes">Mes</label>
+        <input type="text" id="mes" formControlName="mes" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="monto">Monto</label>
+        <input type="number" id="monto" formControlName="monto" class="form-control" />
+      </div>
+      <div class="d-flex justify-content-center ">
+        <div class="form-group w-75">
+          <mat-form-field class="w-100">
+            <mat-label>Buscar Cliente</mat-label>
+            <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onOptionSelected($event)">
+              <mat-option *ngFor="let persona of filteredOptions | async" [value]="persona">
+                {{ persona.nombreCompleto }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">{{ botonAccion }}</button>
+      </div>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,29 @@
+<h1 class="dashboard-title">DASHBOARD</h1>
+
+<mat-card class="main-card">
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="100px" class="grid-list">
+      <mat-grid-tile>
+        <mat-card class="card-info">
+          <mat-card-title>Total Usuarios</mat-card-title>
+          <mat-card-subtitle>{{ totalUsuarios }}</mat-card-subtitle>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="card-info">
+          <mat-card-title>Total Clientes</mat-card-title>
+          <mat-card-subtitle>{{ totalClientes }}</mat-card-subtitle>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-card class="chart-card">
+      <mat-card-content>
+        <div class="chart-container">
+          <canvas id="chartBarras"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

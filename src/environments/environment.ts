@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  endpoint:  "http://localhost:5154/api/",
+  X_PUBLIC_KEY:"pk_live_hoTUlyBJRi18fe2hdeILXmJYSEBQGCOiG1OLzyEOmFgnsfLprzzORDED3",
+  X_SECRET_KEY:"sk_live_hs8mNZ2O76YWcNl19IjLJeR8BxxdLQ2OYAlY6ZZbnPXjGT0PaANnwI3G0"
 };
 
 /*

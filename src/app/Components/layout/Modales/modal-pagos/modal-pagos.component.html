@@ -1,0 +1,47 @@
+<h2>{{tituloAccion}} Pagos</h2>
+
+
+<div class="modal-body">
+    
+    <form [formGroup]="formularioPago">
+    <!--<mat-form-field>
+      <mat-label>Buscar</mat-label>
+      <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onOptionSelected($event)">
+        <mat-option *ngFor="let persona of filteredOptions | async" [value]="persona">
+          {{ persona.nombreCompleto }}
+        </mat-option>
+      </mat-autocomplete>    
+    </mat-form-field>-->
+    <h3>Pago en Efectivo</h3>
+    <div class="row g-2">
+      <div class="col">
+        <label for="fechaInicio">Fecha Inicio</label>
+        <input type="date" id="fechaInicio"class="form-control material-date" formControlName="fechaInicio">
+      </div>
+      <div class="col">
+        <label for="fechaFin">Fecha Fin</label>
+        <input type="date" id="fechaFin" class="form-control material-date" formControlName="fechaFin">
+      </div>
+    </div>
+    <div class="row g-2">
+        <div class="col">
+          <label for="mes">Mes</label>
+          <input type="text" id="mes"class="form-control material-date" formControlName="mes">
+        </div>
+        <div class="col">
+          <label for="monto">Monto</label>
+          <input type="text" id="monto" class="form-control material-date" formControlName="monto">
+        </div>
+      </div>
+
+    </form>
+  </div>
+  
+  
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="cerrarModal()">Volver</button>
+    <button type="button" class="btn btn-primary" (click)="guardarEditar_Pago()">
+        {{botonAccion}}
+    </button>
+  </div>

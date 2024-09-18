@@ -1,0 +1,22 @@
+.card-custom {
+  width: 50%; /* Ajusta el ancho de la tarjeta según sea necesario */
+  max-width: 400px; /* Establece un ancho máximo para la tarjeta */
+  margin: 0 auto; /* Centra la tarjeta en su contenedor */
+}
+
+.card-custom .card-body {
+  padding: 1.5rem; /* Ajusta el relleno interior del contenido de la tarjeta */
+}
+
+.card-custom .btn-primary {
+  margin-top: 1rem; /* Añade un margen superior al botón */
+}
+.card-title-custom {
+  font-size: 1.5rem; /* Reduce el tamaño de la fuente a 1.5rem */
+  font-weight: 500; /* Grosor de fuente seminegrita (puedes ajustar esto) */
+  text-align: center; /* Centra el texto dentro de su contenedor */
+  color: #5c5959; /* Color del texto, ajusta según el diseño */
+  margin: 0; /* Elimina márgenes predeterminados, ajusta si es necesario */
+  padding: 0.5rem 0; /* Añade espaciado arriba y abajo, ajusta si es necesario */
+}
+

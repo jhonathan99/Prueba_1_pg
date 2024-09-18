@@ -1,0 +1,24 @@
+<div class="card card-custom">
+  <div class="card-body">
+    <h5 class="card-title card-title-custom">Finalizando Pago en Línea</h5>
+    <form [formGroup]="formularioPago" (ngSubmit)="guardarEditar_Pago()">
+      <!--<div class="form-group">
+        <label for="fechaInicio">Fecha Inicio</label>
+        <input type="date" id="fechaInicio" formControlName="fechaInicio" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="fechaFin">Fecha Fin</label>
+        <input type="date" id="fechaFin" formControlName="fechaFin" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="mes">Mes</label>
+        <input type="text" id="mes" formControlName="mes" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="monto">Monto</label>
+        <input type="number" id="monto" formControlName="monto" class="form-control" />
+      </div>-->
+      <button type="submit" class="btn btn-primary">{{ botonAccion }}</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<h2>{{tituloAccion}} Colaboradores</h2>
+
+<div class="modal-body">
+  <form [formGroup]="formularioColaborador">
+    <mat-form-field>
+      <mat-label>Buscar Persona</mat-label>
+      <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onOptionSelected($event)">
+        <mat-option *ngFor="let persona of filteredOptions | async" [value]="persona">
+          {{ persona.nombreCompleto }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <div class="form-group">
+    <label for="Salario">Salario</label>
+    <input type="text" id="salario" class="form-control" formControlName="salario" (input)="onInput($event)">
+    </div>
+    <div class="form-group">
+    <label for="FechaInicio">Fecha Alta</label>
+    <input type="date" id="fechaInicio" class="form-control material-date" formControlName="fechaInicio">
+    </div>
+    <div class="form-group">
+    <label for="FechaFin">Fecha Baja</label>
+    <input type="date" id="fechaFin" class="form-control material-date" formControlName="fechaFin">
+    </div>
+
+    <div class="form-group">
+      <label for="esActivo">Estado</label>
+      <select id="esActivo" class="form-control" formControlName="esActivo">
+        <option value="1">Activo</option>
+        <option value="0">No activo</option>
+      </select>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-danger" (click)="cerrarModal()">Volver</button>
+  <button type="button" class="btn btn-primary" (click)="guardarEditar_Colaborador()">
+    {{botonAccion}}
+</button>
+
+</div>
+

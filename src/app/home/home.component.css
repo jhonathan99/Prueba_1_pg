@@ -1,0 +1,257 @@
+/* General Styles */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+  text-align: justify;
+  max-width: 100%; /* Cambiado a 100% para ocupar toda la pantalla */
+  margin: 0; /* Cambiado a 0 para eliminar el margen lateral */
+  padding: 0 0px; /* Añadido padding para mantener el contenido alejado de los bordes */
+  box-sizing: border-box; /* Añadido para incluir padding y border en el ancho total */
+  overflow: hidden; /* Añadido para evitar desbordamiento horizontal */
+
+}
+
+/* Header */
+header {
+  display: flex;
+  font-family: Arial, sans-serif;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(1, 1, 1);
+  color: white;
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 30px;
+  font-size: 1rem;
+  font-family: 'Verdana';
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f7f7f7; /* Color original del texto */
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #f8b400; /* Color de la línea */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover {
+  color: #f8b400; /* Color del texto al poner el cursor encima */
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+/* Main */
+main {
+  text-align: center;
+}
+.hero_principal {
+  background-color: #f8b400;
+  padding: 3px 3px;
+}
+.hero {
+  background-color: #fdfdfd;
+  padding: 20px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin: 0;
+  font-family: 'Verdana', sans-serif; /* Cambia a la familia de fuentes que prefieras */
+  font-weight: bold; /* O normal, lighter, etc. según lo que desees */
+  color: #000000; /* Cambia a cualquier color que prefieras */
+  text-align: center; /* Centra el texto si es necesario */
+  letter-spacing: 2px; /* Ajusta el espaciado entre letras */
+  line-height: 1.2; /* Ajusta la altura de la línea */
+}
+
+/* Report Section */
+.report {
+  text-align: left;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.report h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.report p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.report img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+  background-color: rgb(1, 1, 1);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+.footer_2 {
+  background-color: #f8b400;
+  color:  rgb(1, 1, 1);
+  padding: 3px 0;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.eslogan img {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Asegura que toda la imagen se vea, con posibles bordes en blanco */
+}
+
+@media (min-height: 500px) {
+  .eslogan img {
+    height: 100vh; /* En pantallas más altas, usa toda la altura disponible */
+    object-fit: cover; /* Cubre el contenedor */
+  }
+}
+
+.section {
+  margin: 50px 0;
+}
+
+.section-title {
+  color: #f8b400;
+  font-weight: bold;
+
+}
+
+.section-text {
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 1.5;
+  margin: 10px 0;
+  padding: 40px 40px;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.rounded {
+  border-radius: 15px;
+}
+
+
+.footer {
+  background-color: rgb(1, 1, 1);
+  color: #fff;
+  padding: 40px 0;
+  font-family: Verdana, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  margin: 5px 0;
+}
+
+.footer-links, .footer-contact {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.footer-links h3, .footer-contact h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.footer-links ul, .footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, .footer-contact li {
+  margin-bottom: 10px;
+}
+
+.footer-contact i {
+  margin-right: 10px;
+}
+
+.social-media {
+  margin-top: 10px;
+}
+
+.social-media a {
+  margin: 0 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.social-media a:hover {
+  color: #f8b400;
+}

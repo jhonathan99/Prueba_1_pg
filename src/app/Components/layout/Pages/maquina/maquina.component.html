@@ -1,0 +1,83 @@
+<div class="container mt-4">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1>Máquinas</h1>
+          <button class="btn btn-primary" (click)="nuevoMaquina()">
+            <i class="bi bi-plus"></i> Agregar
+          </button> 
+          <div class="d-flex">
+            <input type="text" class="form-control" (keyup)="aplicarFiltroTabla($event)" placeholder="Buscar">
+          </div>
+          <div class="btn-group" role="group" aria-label="Filtro de estado de máquinas">
+            <input type="checkbox" class="btn-check" id="btncheckActivas" autocomplete="off" (change)="aplicarFiltroEspecial($event)">
+            <label class="btn btn-outline-primary" for="btncheckActivas">Activas</label>
+          
+            <input type="checkbox" class="btn-check" id="btncheckNoActivas" autocomplete="off" (change)="aplicarFiltroEspecial($event)">
+            <label class="btn btn-outline-primary" for="btncheckNoActivas">No Activas</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="table-responsive">
+          <table mat-table [dataSource]="dataListaMaquinas" class="table table-bordered">
+            <ng-container matColumnDef="descripcionPersona">
+              <th mat-header-cell *matHeaderCellDef> Colaborador </th>
+              <td mat-cell *matCellDef="let element"> {{element.descripcionPersona}} </td>
+            </ng-container>
+            <ng-container matColumnDef="codMaquina">
+              <th mat-header-cell *matHeaderCellDef> Código </th>
+              <td mat-cell *matCellDef="let element"> {{element.codMaquina}} </td>
+            </ng-container>
+            <ng-container matColumnDef="nombre">
+              <th mat-header-cell *matHeaderCellDef> Nombre </th>
+              <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+            <ng-container matColumnDef="costo">
+              <th mat-header-cell *matHeaderCellDef>Costo</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.costo | currency: 'GTQ': 'symbol' }}
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="fechaAdquisicion">
+              <th mat-header-cell *matHeaderCellDef> Fecha Adquisición </th>
+              <td mat-cell *matCellDef="let maquina">{{ maquina.fechaAdquisicion | date: 'dd-MM-yyyy' }}</td>
+            </ng-container>
+            <ng-container matColumnDef="fechaSalida">
+              <th mat-header-cell *matHeaderCellDef> Fecha Baja </th>
+              <td mat-cell *matCellDef="let maquina">
+              {{ maquina.fechaSalida ? (maquina.fechaSalida | date: 'dd-MM-yyyy') : 'Máquina aún no ha sido dado de Baja' }}</td>
+            </ng-container>
+            <ng-container matColumnDef="estado">
+              <th mat-header-cell *matHeaderCellDef> Estado </th>
+              <td mat-cell *matCellDef="let element"> {{element.esActivo == 1 ? 'Activo' : 'No activo'}} </td>
+            </ng-container>
+            <ng-container matColumnDef="acciones">
+              <th mat-header-cell *matHeaderCellDef> Acciones </th>
+              <td mat-cell *matCellDef="let element">
+               <button class="btn btn-warning btn-sm" (click)="editarMaquina(element)">
+                <i class="bi bi-pencil fs-10"></i>
+                </button>
+              </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="columnasTabla"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnasTabla;"></tr>
+            
+          </table>
+  
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <div>
+              Total en Máquinas: {{ getTotalCosto() | currency: 'GTQ': 'symbol' }}
+            </div>
+            <button class="btn btn-success" (click)="exportToExcel()">
+              <i class="bi bi-file-earmark-excel"></i> Exportar
+            </button> 
+            <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]"></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

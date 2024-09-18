@@ -1,0 +1,42 @@
+<section class="vh-100" style="background-color: #2a2b2f;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <div class="card shadow-lg border-0 rounded-3">
+          <div class="card-body p-4">
+            <div class="text-center mb-3">
+              <img src="/assets/login-icon.svg" alt="login-icon" style="height: 5rem;" />
+            </div>
+            <h3 class="text-center mb-4">LOGIN</h3>
+            <form [formGroup]="formularioLogin" (ngSubmit)="iniciarSesion()">
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form1Example13">Correo Electronico</label>
+                <input type="email" id="form1Example13" class="form-control form-control-lg" formControlName="email" autocomplete="off" placeholder=""/>
+              </div>
+              <!-- Password input -->
+              <div class="form-outline mb-4 position-relative">
+                <label class="form-label" for="form1Example23">Contraseña</label>
+                <input [type]="ocultarPassword ? 'password' : 'text'" id="form1Example23" class="form-control form-control-lg" formControlName="password" autocomplete="off" placeholder=""/>
+                <button type="button" class="btn btn-link btn-toggle-password" (click)="ocultarPassword = !ocultarPassword">
+                  <i class="fas" [ngClass]="ocultarPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+                </button>
+              </div>
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-info text-white w-100 btn-lg shadow-sm" [disabled]="formularioLogin.invalid || mostrarLoading">Iniciar Sesión</button>
+              <div class="mt-4">
+                <mat-progress-bar mode="indeterminate" *ngIf="mostrarLoading"></mat-progress-bar>
+              </div>
+            </form>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

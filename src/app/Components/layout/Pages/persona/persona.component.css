@@ -1,0 +1,62 @@
+/* Puedes ajustar los márgenes según sea necesario */
+.container {
+    margin-top: 10px;
+  }
+  /* Opcional: Estilo para el título h1 */
+  h1 {
+    font-size: 1.5rem; /* Reduce el tamaño de la fuente a 1.5rem */
+    font-weight: 500; /* Grosor de fuente seminegrita (puedes ajustar esto) */
+    text-align: center; /* Centra el texto dentro de su contenedor */
+    color: #5c5959; /* Color del texto, ajusta según el diseño */
+    margin: 0; /* Elimina márgenes predeterminados, ajusta si es necesario */
+    padding: 0.5rem 0; /* Añade espaciado arriba y abajo, ajusta si es necesario */
+  }
+  .card-header {
+    background-color: #f8f9fa;
+  }
+  
+  .table th, .table td {
+    text-align: center;
+  }
+  
+  .table-responsive {
+    margin-top: 5px;
+  }
+  
+  .btn {
+    margin-right: 5px;
+  }
+  /* Aumentar el tamaño de los íconos */
+  .fs-4 {
+    font-size: 1.5rem; /* Ajusta el tamaño del ícono según tu preferencia */
+  }
+  /* Ajusta el ancho de las columnas */
+  .mat-header-cell,
+  .mat-cell {
+    padding: 0.5rem; /* Ajusta el padding si es necesario */
+  }
+  /* Ajusta el estilo de la tabla */
+  .table {
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
+    table-layout: fixed; /* Establece el layout fijo para controlar el ancho de las columnas */
+  }
+  /* Ajusta la altura de las filas */
+  .mat-header-row, .mat-row {
+    height: 1rem; /* Ajusta la altura de las filas, cambia según sea necesario */
+  }
+
+  .mat-column-rolDescripcion {
+    width: 12%; 
+  }
+  .mat-column-estado {
+    width: 10%; 
+  }
+  .mat-column-correo {
+    width: 20%; 
+  }
+  .mat-column-acciones {
+    width: 14%; 
+  }
+  .mat-column-nombreCompleto {
+    width: 35%; 
+  }

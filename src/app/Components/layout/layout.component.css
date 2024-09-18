@@ -1,0 +1,124 @@
+#sidebar {
+  width: 180px;
+
+  height: auto; 
+  font-size: 1.1rem;
+}
+
+#content {
+  height: 90vh;
+  overflow-y: auto;
+}
+
+.text-center img {
+  max-width: 100%;
+  height: auto; 
+  border-radius: 5px; 
+  justify-content: flex-end; 
+}
+
+/* Asegúrate de que el contenedor del sidebar ocupe toda la altura disponible */
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 93vh; /* O una altura específica si es necesario */
+  align-items: center; /* Centra los elementos horizontalmente */
+  padding: 1rem; /* Ajusta el espaciado interno si es necesario */
+  
+}
+
+/* Utiliza Flexbox para alinear el contenido del sidebar */
+.nav {
+  width: 100%; /* Make sure the nav takes full width of the sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  padding: 0;
+  margin: 0;
+  
+}
+.nav-item {
+  width: 100%; /* Asegura que los elementos de la lista ocupen todo el ancho */
+}
+
+.nav-link:hover {
+  background-color: #1d54dd  ; /* Color de fondo al pasar el cursor */
+  color: #060202; /* Color del texto al pasar el cursor */
+  transform: scale(1.05); /* Pequeña ampliación al pasar el cursor */
+}
+
+/* Estilo para los enlaces de navegación */
+.nav-link {
+  display: flex;
+  align-items: center; /* Centra verticalmente el texto y el icono */
+  justify-content: center; 
+  padding: 0.5rem; 
+  text-align: center; /* Centra el texto dentro del enlace */
+  color: #030101; /* Color del texto por defecto */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Transición suave para fondo, color y transformación */
+  text-decoration: none; 
+  border-radius: 5px; 
+}
+.nav-link_2 {
+  display: flex;
+  align-items: center; /* Centra verticalmente el texto y el icono */
+  justify-content: center; 
+  padding: 0.8rem; 
+  text-align: center; /* Centra el texto dentro del enlace */
+  color: #ffffff; /* Color del texto por defecto */
+
+  text-decoration: none; 
+  border-radius: 5px; 
+}
+
+/* Estilos adicionales para asegurar la responsividad */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .d-flex.flex-column.flex-lg-row {
+    flex-direction: column;
+  }
+}
+
+/* --------------------------------------------------------------------------------------------- */
+
+
+.navbar-custom {
+  background-color:#333; /* Color de fondo del navbar */
+}
+
+.navbar-custom .navbar-brand {
+  font-size: 1.3rem; /* Tamaño de fuente de la marca */
+  color: #fdf8f8; /* Color del texto */
+}
+
+.navbar-custom .nav-item {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.navbar-custom .nav-link {
+  font-size: 16px; 
+  color: #dad4d4; /* Color del texto */
+}
+
+.navbar-custom .btn-outline-light {
+  color: #ffffff; /* Color del texto del botón */
+  border-color: #ffffff; /* Color del borde del botón */
+}
+
+.navbar-custom .btn-outline-light:hover {
+  color: #eadbdb; /* Color del texto del botón al pasar el cursor */
+  background-color: #1d54dd; /* Color de fondo del botón al pasar el cursor */
+  border-color: #fff3f3; /* Color del borde del botón al pasar el cursor */
+}
+
+
+
+
+
+
+
